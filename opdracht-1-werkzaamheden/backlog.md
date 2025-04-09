@@ -1,31 +1,24 @@
-# Backlog - EasyFWD 
+# Backlog - Websiteproject 4U Solutions BV
 
 Onze backlog is beheerd in een kanba-board binnen Notion. Elke taak is uitgewerkt als user story.
+Hieronder een overzicht van de belangrijkste user stories en hun status.
 
 ## User Stories (selectie)
 
-| ID    | Titel                                            | Status     |
-|-------|--------------------------------------------------|------------|
-| US-01 | Opzetten projectstructuur                        | Done       |
-| US-03 | Navigatiemenu                                    | Done       |
-| US-04 | Instructie sectie                                | Backlog    |
-| US-05 | Basis reserveringssysteem                        | Backlog    |
-| US-06 | ROI-tool implementeren                           | Backlog    |
-| US-07 | Klantbeoordelingen (testimonials)                | New        |
-| US-08 | Bevestigingsmail reservering                     | Backlog    |
-| US-09 | Contactformulier                                 | New        |
-| US-10 | Hero sectie (Intro & CTA)                        | Done       |
-| US-11 | Vertrouwd door bedrijven (logos)                 | Backlog    |
-| US-12 | Dienstenoverzicht EasyFWD/EasyFlux/Analyse       | Backlog    |
-| US-14 | Prijssectie (Brons/Zilver/Goud)                  | New        |
-| US-15 | Impact & Resultaten (Statistieken)               | Backlog    |
-| US-16 | Laatste call-to-action                           | Backlog    |
-| US-17 | Footer                                           | Done       |
+| ID     | Als...          | wil ik...                                         | zodat ik...                                     | Prioriteit | Uren |
+|--------|------------------|--------------------------------------------------|------------------------------------------------|------------|------|
+| US-01  | ontwikkelaar     | een projectstructuur opzetten                    | een schaalbare en overzichtelijke basis heb     | Must       | 2    |
+| US-03  | bezoeker         | kunnen navigeren via een menu                   | snel de juiste informatie vind                  | Must       | 3    |
+| US-05  | bedrijf          | een demo kunnen reserveren                      | ik het product live kan ervaren                 | Must       | 5    |
+| US-06  | bedrijf          | mijn besparing berekenen met een ROI-tool       | ik geïnformeerd een aankoopbeslissing kan nemen | Should     | 4    |
+| US-10  | bezoeker         | direct begrijpen wat EasyFWD is                 | ik snel kan beslissen of het relevant is        | Must       | 3    |
+| US-12  | bezoeker         | zien wat het bedrijf aanbiedt                   | ik een goed overzicht heb van de diensten       | High       | 3    |
+| US-17  | bezoeker         | contactinformatie onderaan de site zien         | ik makkelijk contact kan opnemen                | Medium     | 2    |
 
 ## ✅ Definition of Done
 
-- De feature is zichtbaar en functioneel
-- De code is gepush naar github
-- Pull request of peer review is uitgevoerd
-- UX/UI is getest en werkt responsive en sluit aan op de Figma wireframes
-- De code is gedocumenteerd
+- De story volgt het formaat: "Als [role], wil ik [feature] zodat ik [benefit]"
+- Er zijn acceptatiecriteria opgesteld per story
+- Code is gepusht en getest
+- Feature is responsive en visueel goedgekeurd
+- Feature is gedocumenteerd in Github

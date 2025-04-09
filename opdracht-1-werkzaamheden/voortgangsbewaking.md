@@ -1,38 +1,35 @@
-# Voortgangsbewaking – EasyFWD
+# Voortgangsbewaking – Websiteproject 4U Solutions BV
 
-De voortgang is dagelijks bijgehouden in Notion via het kanban-board.
+Tijdens het project hield ik de voortgang dagelijks bij in het Scrum board in Notion.
 
-## Statusoverzicht (eind sprint)
+## 📆 Dagelijks overzicht en 🖼️ screenshot-bewijs
 
-| Kolom        | Aantal items |
-|--------------|--------------|
-| Backlog      | 8            |
-| Sprint-3     | 1            |
-| In Progress  | 2            |
-| In Review    | 0            |
-| Done         | 10           |
-| Canceled     | 0            |
-| On Hold      | 0            |
+**24 maart 2025**  
+![Notion Kanban Board](../bronnen/kanban-board.png)  
+- Projectstructuur opgezet (US-01) ✔  
+- User stories opgesteld en backlog gevuld  
+- Sprint 1 gepland en taken verdeeld
 
-## Samenvatting voortgang
+**31 maart 2025**  
+![Notion Kanban Board](../bronnen/kanban-board-2.png)  
+- US-03 (navigatie) en US-10 (hero sectie) in uitvoering  
+- Geen blokkades, planning loopt volgens schema
 
-- In week 1 is de basisstructuur opgezet en zijn de eerste UX/UI-componenten gebouwd.
-- In week 2 lag de focus op klantgerichte secties zoals testimonials en pricing.
-- In week 3 zijn er nog openstaande taken opgepakt, zoals reservering en instructiesectie.
-- In week 4 is zijn nog een aantal openstaande taken opgepakt, zoals de Prijssectie en de contacformulier.
+**2 april 2025**  
+![Notion Kanban Board](../bronnen/kanban-board-3.png)  
+- Footer (US-17) toegevoegd aan Sprint 1 op basis van feedback  
+- Herverdeling van uren om realistischere taakverdeling te realiseren
 
-## Tools gebruikt
+**4 april 2025**  
+![Notion Kanban Board](../bronnen/kanban-board-4.png)  
+- Meerdere stories verplaatst naar "In Review"  
+- Nieuwe story (US-14, prijstabel) ingepland voor volgende sprint
 
-- Notion: Voor het bijhouden van de voortgang en het beheren van de backlog.
-- GitHub: Voor versiebeheer en samenwerking aan de code.
-- Figma: Voor het ontwerpen van de UX/UI-componenten.
-- matremost: Voor communicatie binnen het team.
-- Google Meet: Voor online meetings en overleg met de opdrachtgever.
+**8 april 2025**  
+![Notion Kanban Board](../bronnen/kanban-board-5.png)  
+- US-05 (reserveringsmodule) en US-12 (dienstenoverzicht) afgerond  
+- US-06 (ROI-tool) gedeeltelijk uitgevoerd; planning aangepast
 
-## Screenshots
-// screenshots van de Notion kanban-board met toeliichting
-![Notion Kanban Board](../bronnen/kanban-board.png)
-![Notion Kanban Board](../bronnen/kanban-board-2.png)
-![Notion Kanban Board](../bronnen/kanban-board-3.png)
-![Notion Kanban Board](../bronnen/kanban-board-4.png)
-![Notion Kanban Board](../bronnen/kanban-board-5.png)
+## 🔍 Reflectie
+
+Dankzij dagelijkse stand-ups hielden we een helder overzicht van de voortgang. Prioriteiten konden snel worden aangepast en taken werden tijdig bijgestuurd. Door het gebruik van het visuele Scrum board in Notion bleef het hele team betrokken en transparant op de hoogte van de voortgang.Dankzij dagelijkse stand-ups hielden we een helder overzicht van de voortgang. Prioriteiten konden snel worden aangepast en taken werden tijdig bijgestuurd. Door het gebruik van het visuele Scrum board in Notion bleef het hele team betrokken en transparant op de hoogte van de voortgang.
