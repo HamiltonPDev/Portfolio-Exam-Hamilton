@@ -22,3 +22,7 @@ Hieronder een overzicht van de belangrijkste user stories en hun status.
 - Code is gepusht en getest
 - Feature is responsive en visueel goedgekeurd
 - Feature is gedocumenteerd in Github
+
+## 📎 Screenshot
+De screenshot hieronder toont een voorbeeld van de backlog in Notion.
+![Notion Kanban Board](../bronnen/Screenshots/backlog.png)
