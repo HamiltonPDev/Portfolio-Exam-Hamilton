@@ -17,7 +17,7 @@ Hieronder een overzicht van de belangrijkste user stories en hun status.
 
 ## ✅ Definition of Done
 
-- De story volgt het formaat: "Als [role], wil ik [feature] zodat ik [benefit]"
+- De story volgt het formaat: "Als.... wil ik.....  zodat ik...."
 - Er zijn acceptatiecriteria opgesteld per story
 - Code is gepusht en getest
 - Feature is responsive en visueel goedgekeurd
