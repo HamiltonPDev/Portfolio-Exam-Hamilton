@@ -93,7 +93,3 @@ De sisen en wensen van de opdrachtgever zijn vertaald naar User Stories, zoals:
 
 ---
 
-## Scrum & Planning
-- **Sprintduur:** 1–2 weken  
-- **Board-kolommen:** Backlog → Sprint → In Progress → In Review → Done  
-- **Meetings:** dagelijkse stand-up, sprint planning, sprint review, retrospective  
