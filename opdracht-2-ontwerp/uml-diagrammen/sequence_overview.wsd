@@ -1,0 +1,32 @@
+@startuml sequence_overview
+actor Admin
+boundary "NextAuth.js Route\n([…nextauth]/route.ts)" as NextAuth
+participant "Credentials Provider" as CredProv
+database "MongoDB\n(users collection)" as DB
+participant "JWT Session\n(cookies())" as Session
+participant Middleware
+participant "Server Components\n/Admin" as AdminUI
+
+== Admin opens login page ==
+Admin -> NextAuth: GET /api/auth/signin
+NextAuth -> Admin: 200 HTML form (email + password)
+
+== Admin submits credentials ==
+Admin -> NextAuth: POST /api/auth/callback/credentials\n{ email, password }
+NextAuth -> CredProv: authorize({ email, password })
+CredProv -> DB: findOne({ email })
+DB --> CredProv: user record (with passwordHash)
+CredProv --> NextAuth: valid user? (true)
+
+== Session creation ==
+NextAuth -> Session: create JWT in cookie
+Session --> Admin: Set-Cookie: next-auth.session-token
+
+== Accessing protected /admin ==
+Admin -> Middleware: GET /admin
+Middleware -> Session: read & verify JWT
+Session --> Middleware: valid?
+Middleware --> AdminUI: render Admin Dashboard
+AdminUI --> Admin: 200 HTML/JS
+
+@enduml
