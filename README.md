@@ -14,7 +14,7 @@ In deze repository vind je alle opdrachten, bewijsstukken en reflecties die same
 
 - Opdracht 1: [Werkzaamheden](opdracht-1-werkzaamheden/)
 - Opdracht 2: [Ontwerp](opdracht-2-ontwerp/)
-- Opdracht 3: [Implementatie](opdracht-3-realiseert/)
+- Opdracht 3: [Realiseert](opdracht-3-realiseert/)
 - Opdracht 4: [Testen](opdracht-4-testen/)
 - Opdracht 5: [Reflectie](opdracht-5-reflectie/)
 - Opdracht 6: [Overleg](opdracht-6-overleg/)
