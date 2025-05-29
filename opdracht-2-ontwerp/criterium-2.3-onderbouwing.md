@@ -16,14 +16,14 @@ Bij het ontwerp is rekening gehouden met toegankelijkheid: de website is bruikba
 ---
 
 ## Privacy
-Privacy is gewaarborgd door alleen noodzakelijke persoonsgegevens op te slaan. Gevoelige data wordt versleuteld opgeslagen in de database. Gebruikers kunnen hun gegevens op verzoek laten verwijderen (recht op vergetelheid). Er wordt geen onnodige tracking of profiling toegepast. Alleen geautoriseerde beheerders hebben toegang tot privacygevoelige informatie in het CMS.
+persoonsgegevens worden beschermd door alleen noodzakelijke data op te slaan. Wachtwoorden worden gehasht met bcrypt en sessies worden veilig beheerd via HttpOnly cookies in NextAuth.js. Geboeige gegevens zijn versleuteld opgeslagen in MongoDB. Alleen geautoriseerde gebruikers met de juiste rol krijgen toegang tot privacygevoelige informatie. Omgevingsvariabelen staan veilig in een .env-bestand buiten versiebeheer.
 
 ---
 
 ## Security
-Voor de beveiliging is gekozen voor NextAuth voor authenticatie, zodat wachtwoorden nooit in plain text worden opgeslagen. Alle tRPC-endpoints zijn beveiligd met authorisatiechecks, zodat alleen bevoegde gebruikers data kunnen aanpassen. Input van gebruikers wordt gevalideerd om SQL-injectie en XSS-aanvallen te voorkomen. Regelmatige updates en dependency checks zorgen ervoor dat bekende kwetsbaarheden snel worden verholpen. Daarnaast worden gevoelige API-routes afgeschermd via middleware.
+Authenticatie en autorisatie verlopen via NextAuth.js, waarbij wachtwoorden nooit in plain text worden opgeslagen. Rol-gebaseerde toegang en middleware zorgen ervoor dat alleen bevoegde gebruikers het CMS kunnen heberen. Alle communicatie veloopt via HTTPS. tRPC-endpoints zijn beveiligd met authorisatiechecks en gebruikersinput wordt gevalideerd om misbruik te voorkomen.
 
 ---
 
 ## Reflectie en verbeterpunten
-Het ontwerp van EasyFWD is veilig, privacyvriendelijk en ethisch verantwoord. Een sterk punt is de duidelijke scheiding van verantwoordelijkheden en de type-safe communicatie via tRPC. In de toekomst zou ik nog meer willen investeren in automatische accessibility-tests, het verder beperken van dataretentie en het uitbreiden van de rechtenstructuur voor verschillende gebruikersrollen. 
+Het ontwerp van EasyFWD is veilig, privacyvriendelijk en ethisch verantwoord. Een sterk punt is de duidelijke scheiding van verantwoordelijkheden en de type-safe communicatie via tRPC. In de toekomst zou ik nog meer willen investeren in automatische accessibility-tests, het verder beperken van dataretentie en het uitbreiden van de rechtenstructuur voor verschillende gebruikersrollen.
