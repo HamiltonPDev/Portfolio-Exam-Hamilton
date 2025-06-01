@@ -1,0 +1,37 @@
+@startuml ERD_diagram
+' Entity-Relationship Diagram (ERD) for EasyFWD CMS
+
+entity "users" as Users {
+  * _id           : ObjectId <<PK>>
+  --
+  name            : String
+  email           : String <<UQ>>
+  passwordHash    : String
+  role            : String  {admin, editor, viewer}
+}
+
+entity "pages" as Pages {
+  * _id           : ObjectId <<PK>>
+  --
+  title           : String
+  content         : String
+  imageUrl        : String <<NULL>>
+  status          : String  {draft, published}
+  publishedAt     : Date    <<NULL>>
+  authorId        : ObjectId <<FK>>
+}
+
+entity "sections" as Sections {
+  * _id           : ObjectId <<PK>>
+  --
+  pageId          : ObjectId <<FK>>
+  title           : String
+  description     : String
+  imageUrl        : String <<NULL>>
+}
+
+
+Users ||--o{ Pages     : "owns"
+Pages ||--o{ Sections  : "contains"
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml use_case_diagram
+left to right direction
+skinparam packageStyle rectangle
+
+actor Beheerder
+
+package "EasyFWD Use Cases" {
+  usecase UC_ViewProductInfo     as "Productinformatie\nbekijken"
+  usecase UC_RequestDemo         as "Demo aanvragen"
+  usecase UC_Contact             as "Contact opnemen"
+  usecase UC_ReadReviews         as "Reviews lezen"
+  usecase UC_ConsultFAQ          as "FAQ raadplegen"
+  usecase UC_ComparePrices       as "Prijzen vergelijken"
+  usecase UC_LoginCMS            as "Inloggen op CMS"
+  usecase UC_ManageContent       as "Content beheren"
+  usecase UC_UploadImages        as "Afbeeldingen uploaden"
+  usecase UC_EditPages           as "Pagina’s visueel bewerken"
+}
+
+actor Bezoeker  #right
+actor Bedrijfsklant  #right
+
+' Relaties beheerder
+Beheerder      -- UC_LoginCMS
+UC_LoginCMS    --> UC_ManageContent
+UC_ManageContent --> UC_UploadImages
+UC_ManageContent --> UC_EditPages
+
+' Relaties bezoeker
+Bezoeker       -- UC_ViewProductInfo
+Bezoeker       -- UC_Contact
+Bezoeker       -- UC_ReadReviews
+Bezoeker       -- UC_ConsultFAQ
+Bezoeker       -- UC_ComparePrices
+
+' Relaties bedrijfsklant
+Bedrijfsklant  -- UC_RequestDemo
+UC_RequestDemo .> UC_Contact : <<include>>
+UC_RequestDemo .> UC_RequestDemo : <<extend>>\n(optie: bedrijfsnaam)
+@enduml

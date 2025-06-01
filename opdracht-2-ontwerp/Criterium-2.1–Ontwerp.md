@@ -48,7 +48,7 @@ Het systeem bestaat uit een publieke website voor bezoekers en een beheerdersomg
 
 ## Use Case Diagram
 
-*Het use case diagram is te vinden in het bestand `use-case-diagram.png` in deze map.*
+![Use Case Diagram](./uml-diagrammen/use_case.png)
 
 ---
 
