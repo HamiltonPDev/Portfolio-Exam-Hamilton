@@ -1,67 +1,63 @@
 # Criterium 5.2: Verbetervoorstellen op basis van oplevering
 
-In dit onderdeel worden verbetervoorstellen gedaan op basis van de oplevering van het product. Hierbij wordt gekeken naar de functionaliteit, het gebruik en de feedback van gebruikers of stakeholders.
+In dit onderdeel worden verbetervoorstellen gedaan op basis van de oplevering van het product. Hierbij wordt gekeken naar de functionaliteit, het gebruik en de feedback van gebruikers.
 
 ---
 
-## 1. Gebruikersfeedback bij foutmeldingen verbeteren
+## 1. Betere feedback bij login- en authenticatiefouten
 
 **Oplevering/Feedback:**
-Tijdens de oplevering gaven gebruikers aan dat foutmeldingen soms te technisch of onduidelijk waren.
+Tijdens de oplevering bleek dat foutmeldingen bij inloggen of toegang tot admin soms te algemeen of technisch zijn (bijvoorbeeld alleen "Unauthorized").
 
 ### Waarom moet dit verbeterd worden?
-Duidelijke en begrijpelijke foutmeldingen zorgen voor minder frustratie bij gebruikers en maken het makkelijker om problemen zelf op te lossen.
+Duidelijke, gebruikersvriendelijke foutmeldingen helpen gebruikers sneller begrijpen wat er misgaat (bijvoorbeeld: "Verkeerd wachtwoord" of "Geen toegang tot deze pagina").
 
 ### Stappen
-1. Verzamel voorbeelden van huidige foutmeldingen uit de applicatie.
-2. Schrijf gebruikersvriendelijke teksten voor deze meldingen, eventueel in overleg met eindgebruikers.
-3. Implementeer de nieuwe meldingen en test of gebruikers ze beter begrijpen.
+1. Inventariseer alle foutmeldingen bij login en admin-toegang.
+2. Schrijf duidelijke, Nederlandstalige meldingen voor elk scenario.
+3. Test met gebruikers of de meldingen duidelijk zijn en pas aan waar nodig.
 
 ---
 
-## 2. Laadtijden optimaliseren
+## 2. Verbeteren van gebruikersbeheer (admin)
 
 **Oplevering/Feedback:**
-Bij de eerste oplevering werd opgemerkt dat sommige pagina's traag laden, vooral bij veel data.
+Tijdens de oplevering bleek dat het beheer van gebruikers (rollen toekennen, gebruikers blokkeren) beperkt of handmatig is.
 
 ### Waarom moet dit verbeterd worden?
-Snellere laadtijden verbeteren de gebruikerservaring en zorgen ervoor dat gebruikers niet afhaken.
+Een gebruiksvriendelijk admin-paneel voor gebruikersbeheer maakt het systeem veiliger en makkelijker te onderhouden.
 
 ### Stappen
-1. Meet de huidige laadtijden met tools zoals Lighthouse of Chrome DevTools.
-2. Identificeer knelpunten in frontend en backend (bijvoorbeeld grote afbeeldingen, trage queries).
-3. Optimaliseer code, assets en database waar nodig en test opnieuw.
+1. Ontwerp een eenvoudige UI voor het beheren van gebruikers en rollen.
+2. Implementeer functies zoals "gebruiker blokkeren" of "rol wijzigen".
+3. Voeg tests toe voor deze functionaliteit.
 
 ---
 
-## 3. Documentatie uitbreiden
+## 3. Logging en monitoring van loginpogingen
 
 **Oplevering/Feedback:**
-Tijdens de oplevering bleek dat sommige gebruikers moeite hadden met het vinden van informatie in de documentatie.
+Er is nu geen inzicht in mislukte of verdachte loginpogingen.
 
 ### Waarom moet dit verbeterd worden?
-Uitgebreidere en toegankelijke documentatie helpt gebruikers en beheerders sneller op weg en vermindert supportvragen.
+Door loginpogingen te loggen en te monitoren, kunnen beveiligingsproblemen sneller worden opgespoord en aangepakt.
 
 ### Stappen
-1. Inventariseer welke informatie nu ontbreekt of onduidelijk is.
-2. Voeg voorbeelden, API-beschrijvingen en een FAQ toe aan de documentatie.
-3. Vraag feedback van gebruikers en pas de documentatie aan waar nodig.
+1. Implementeer logging van alle (mislukte) loginpogingen.
+2. Maak een dashboard of rapportage voor admins.
+3. Stel alerts in bij verdachte activiteiten (bijvoorbeeld brute-force aanvallen).
 
 ---
 
-## 4. Toegankelijkheid (a11y) verbeteren
+## 4. Toegankelijkheid (a11y) van het login/admin-proces verbeteren
 
 **Oplevering/Feedback:**
-Er is tijdens de oplevering beperkt getest op toegankelijkheid voor mensen met een beperking.
+De login- en adminpagina's zijn mogelijk niet goed bruikbaar voor mensen met een beperking (bijvoorbeeld slechtzienden of mensen die alleen een toetsenbord gebruiken).
 
 ### Waarom moet dit verbeterd worden?
-Een toegankelijke applicatie is bruikbaar voor een bredere doelgroep en voldoet aan wettelijke eisen.
+Toegankelijke software zorgt ervoor dat iedereen, ook mensen met een beperking, de applicatie kan gebruiken.
 
 ### Stappen
-1. Voer een toegankelijkheidsscan uit (bijvoorbeeld met axe of Lighthouse).
-2. Implementeer verbeteringen zoals betere contrasten, toetsenbordnavigatie en screenreader-ondersteuning.
-3. Laat de applicatie testen door gebruikers met verschillende behoeften.
-
----
-
-*Deze lijst kan worden aangevuld op basis van nieuwe feedback of toekomstige opleveringen.* 
+1. Test de login- en adminpagina's met toetsenbord en screenreader.
+2. Verbeter labels, contrast en navigatie waar nodig.
+3. Vraag feedback van gebruikers met verschillende behoeften.

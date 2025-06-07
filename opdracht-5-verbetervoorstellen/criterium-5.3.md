@@ -4,64 +4,60 @@ In dit onderdeel worden verbetervoorstellen gedaan op basis van reflectie op het
 
 ---
 
-## 1. Vroeger starten met testen en CI/CD
+## 1. Eerder en breder testen van edge cases
 
 **Reflectie/Ervaring:**
-Tijdens het project is relatief laat begonnen met het opzetten van geautomatiseerde tests en CI/CD pipelines.
+Tijdens het testen lag de focus vooral op standaard scenario's (geldige/ongeldige login, admin/user toegang). Edge cases zoals brute-force aanvallen, sessie-verloop of gelijktijdige logins zijn niet meegenomen.
 
 ### Waarom moet dit verbeterd worden?
-Door eerder te testen en CI/CD in te richten, worden fouten sneller gevonden en opgelost. Dit verhoogt de kwaliteit en betrouwbaarheid van het project.
+Door vanaf het begin ook edge cases te testen, worden potentiële beveiligings- en stabiliteitsproblemen eerder ontdekt.
 
 ### Stappen
-1. Plan het opzetten van tests en CI/CD direct in de eerste sprint.
-2. Maak een basis pipeline voor automatische tests bij elke commit.
-3. Evalueer en verbeter de pipeline gedurende het project.
+1. Brainstorm in een vroege sprint over mogelijke edge cases en security scenario's.
+2. Voeg deze scenario's toe aan het testplan en implementeer ze in Jest/Cypress.
+3. Evalueer regelmatig of er nieuwe edge cases zijn bijgekomen.
 
 ---
 
-## 2. Beter plannen en prioriteren van taken
+## 2. Testautomatisering en CI/CD direct opzetten
 
 **Reflectie/Ervaring:**
-Sommige taken zijn onderschat of te laat opgepakt, waardoor er tijdsdruk ontstond aan het einde van het project.
+De testautomatisering en CI/CD zijn pas later in het project opgezet, waardoor fouten soms pas laat werden ontdekt.
 
 ### Waarom moet dit verbeterd worden?
-Betere planning zorgt voor minder stress, meer overzicht en een hogere kwaliteit van het eindproduct.
+Door direct te automatiseren en CI/CD te gebruiken, worden fouten sneller zichtbaar en blijft de codebase stabiel.
 
 ### Stappen
-1. Gebruik planningsmethodes zoals story points, Kanban of daily standups.
-2. Evalueer regelmatig de voortgang en stel prioriteiten bij waar nodig.
-3. Documenteer lessons learned voor toekomstige projecten.
+1. Zet direct bij projectstart een basis CI/CD-pipeline op (bijvoorbeeld GitHub Actions).
+2. Automatiseer het draaien van alle tests bij elke commit/push.
+3. Monitor de pipeline en verbeter waar nodig.
 
 ---
 
-## 3. Meer en eerder feedback vragen aan gebruikers/stakeholders
+## 3. Meer samenwerking en kennisdeling rond testen
 
 **Reflectie/Ervaring:**
-In de eerste fasen van het project is weinig feedback opgehaald bij eindgebruikers.
+Het testproces is grotendeels individueel uitgevoerd. Er was weinig overleg of review van testscenario's door teamleden.
 
 ### Waarom moet dit verbeterd worden?
-Vroegtijdige feedback zorgt ervoor dat het product beter aansluit bij de wensen van de doelgroep en voorkomt dure aanpassingen achteraf.
+Door samen te testen en elkaars scenario's te reviewen, worden blinde vlekken voorkomen en leren teamleden van elkaar.
 
 ### Stappen
-1. Plan feedbackmomenten in elke sprint of ontwikkelfase.
-2. Gebruik wireframes, demo's of prototypes om feedback te verzamelen.
-3. Verwerk de feedback direct in de backlog en planning.
+1. Plan gezamenlijke testreview-sessies in (bijvoorbeeld na elke sprint).
+2. Laat teamleden elkaars testcode en scenario's reviewen.
+3. Documenteer en deel best practices binnen het team.
 
 ---
 
-## 4. Meer kennis delen binnen het team
+## 4. Vroeger gebruikersfeedback ophalen over login/admin
 
 **Reflectie/Ervaring:**
-Kennisdeling en code reviewsessies vonden weinig plaats tijdens het project.
+Feedback van gebruikers over het loginproces en admin-functionaliteit is pas laat in het traject verzameld.
 
 ### Waarom moet dit verbeterd worden?
-Regelmatige kennisdeling verhoogt de kwaliteit van de code en het leerproces binnen het team.
+Vroegtijdige feedback zorgt ervoor dat de functionaliteit beter aansluit bij de wensen en verwachtingen van gebruikers.
 
 ### Stappen
-1. Plan vaste momenten voor code reviews en kennisdeling.
-2. Moedig teamleden aan om presentaties of demo's te geven.
-3. Documenteer belangrijke inzichten en deel deze met het team.
-
----
-
-*Deze lijst kan worden aangevuld na verdere reflectie of toekomstige projecten.* 
+1. Plan feedbackmomenten in na elke grote oplevering of sprint.
+2. Gebruik demo's of prototypes om gebruikers te laten testen.
+3. Verwerk feedback direct in de backlog en testscenario's.
