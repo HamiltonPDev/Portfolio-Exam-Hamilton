@@ -162,95 +162,54 @@ export const LoginForm = () => {
 
 ## OOP & MVC in dit project
 
-### Wat is OOP?
-Objectgeoriënteerd programmeren (OOP) is een programmeerstijl waarbij je werkt met objecten die data (eigenschappen) en gedrag (methoden) combineren. De vier belangrijkste OOP-principes zijn:
-- **Encapsulatie**: Data en logica samen in één object.
-- **Abstractie**: Complexiteit verbergen achter eenvoudige interfaces.
-- **Overerving**: Eigenschappen/methoden erven van een ander object.
-- **Polymorfisme**: Objecten/methoden kunnen op verschillende manieren gebruikt worden.
+### OOP in de praktijk van dit project
 
-### OOP-principes in de praktijk
+In dit project heb ik OOP toegepast in het User model. Hierin zijn data (zoals email, passwordHash, rol) en logica (zoals wachtwoordvergelijking) samengebracht in één object. Dit zorgt voor structuur, herbruikbaarheid en veiligheid.
 
-#### 1. Encapsulatie
-*Voorbeeld: User model met data en methoden*
-```js
+**Voorbeeld uit het project:**
+```ts
 // src/models/User.ts
-const userSchema = new mongoose.Schema({
-  email: String,
-  passwordHash: String,
-  role: String,
-});
-userSchema.methods.comparePassword = async function (candidatePassword) {
+import mongoose, { Document, Model, Types } from 'mongoose';
+import bcrypt from 'bcryptjs';
+
+export interface IUser extends Document {
+  _id: Types.ObjectId;
+  email: string;
+  passwordHash: string;
+  role: 'admin' | 'editor';
+  comparePassword(candidatePassword: string): Promise<boolean>;
+}
+
+const userSchema = new mongoose.Schema<IUser>(
+  {
+    email: { type: String, required: true, unique: true },
+    passwordHash: { type: String, required: true },
+    role: { type: String, enum: ['admin', 'editor'], default: 'editor' },
+  },
+  { timestamps: true }
+);
+
+// Encapsulatie: logica en data samen
+userSchema.methods.comparePassword = async function (
+  this: IUser,
+  candidatePassword: string
+): Promise<boolean> {
   return bcrypt.compare(candidatePassword, this.passwordHash);
 };
+
+// Abstractie: je gebruikt comparePassword zonder te weten hoe bcrypt werkt
+
+// Overerving: IUser extends Document (Mongoose)
+
+const UserModel = mongoose.models.User || mongoose.model<IUser>('User', userSchema);
+export default UserModel;
 ```
-Hier zitten de gebruikersdata én de logica voor wachtwoordcontrole samen in één object.
+Hiermee maak ik gebruik van:
+- **Encapsulatie:** Data en logica (zoals wachtwoordcontrole) zitten samen in het model.
+- **Abstractie:** De methode `comparePassword` verbergt de complexiteit van bcrypt.
+- **Overerving:** Het model erft standaardmethoden van Mongoose via `Document`.
 
-#### 2. Abstractie
-*Voorbeeld: Gebruik van comparePassword zonder interne details*
-```js
-// src/models/User.ts
-const isValid = await user.comparePassword('wachtwoord123');
-```
-Je gebruikt de methode zonder te weten hoe bcrypt werkt.
-
-#### 3. Overerving
-*Voorbeeld: Mongoose model erft van Document*
-```js
-// src/models/User.ts
-export interface IUser extends Document { ... }
-```
-Hierdoor krijgt het User model automatisch alle standaardmethoden van Mongoose.
-
-#### 4. Polymorfisme
-*Voorbeeld: Verschillende modellen met eigen methoden, zelfde interface*
-```js
-// src/models/Page.ts
-pageSchema.statics.findBySlug = function (slug) {
-  return this.findOne({ slug });
-};
-// src/models/User.ts
-userSchema.statics.findByEmail = function (email) {
-  return this.findOne({ email });
-};
-```
-Beide modellen hebben een eigen static method, maar je gebruikt ze op dezelfde manier.
-
-### OOP in de front-end (React)
-
-#### Props & Herbruikbaarheid
-*Voorbeeld: Button component met props*
-```tsx
-// src/components/shared/button/Button.tsx
-interface ButtonProps {
-  text?: string;
-  onClick: () => void;
-  color?: 'primary' | 'secondary';
-  // ...
-}
-export const Button: React.FC<ButtonProps> = ({ text, onClick, color }) => (
-  <button className={color} onClick={onClick}>{text}</button>
-);
-```
-> *Hiermee kun je overal in je app knoppen maken met verschillende tekst, kleur, grootte en gedrag, zonder code te dupliceren.*
-
-#### Component-gedachte (Encapsulatie in React)
-*Voorbeeld: LoginForm component*
-```tsx
-// src/components/login/LoginForm.tsx
-export const LoginForm = () => {
-  const [error, setError] = useState<string | null>(null);
-  async function handleSubmit(e) { /* ... */ }
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* ... */}
-    </form>
-  );
-};
-```
-State, logica en presentatie zitten samen in één component.
-
----
+Dit User model is een concreet voorbeeld van OOP in de backend van mijn project.
 
 ### MVC in dit project
 
