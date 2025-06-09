@@ -36,7 +36,7 @@ De daily standup van **Sprint 3** vond plaats op [zaterdag 12 april 2025](https:
 ## Overleg en interactie met Omer:
 - Omer vertelde over zijn werk aan het contactformulier (User Story 9), de integratie van React Hook Form, foutmeldingen en styling.
 - We bespraken samen de planning voor Sprint 4 en bepaalden de prioriteit van de user stories.
-- Tom gaf feedback op de Navbar (moet font "Inter" gebruiken) en stelde voor een login-button toe te voegen aan de EasyAnalyse-pagina.
+- Tom gaf feedback op de Navbar (moet font "Roboto" gebruiken) en stelde voor een login-button toe te voegen aan de EasyAnalyse-pagina.
 - Omer vroeg of ik hulp nodig had, maar dat was niet nodig omdat ik vooral met design bezig was.
 - We hebben samen de taken verdeeld en de planning afgestemd.
 

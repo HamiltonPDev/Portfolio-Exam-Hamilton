@@ -9,16 +9,14 @@
 
 | Actiepunt | Verantwoordelijke | Deadline | Opvolging | Betrokkenen |
 |-----------|-------------------|----------|-----------|-------------|
-| Backendstructuur opzetten voor Sprint 4 (US-18) | Hamilton | 15 april 2025 | Prototype backend aangemaakt, commit [abc1234] | Hamilton, team |
-| Navbar font aanpassen naar "Inter" (US-3) | Hamilton | 13 april 2025 | Pull request #24 gemerged, screenshot toegevoegd | Hamilton, Tom |
+| Backendstructuur opzetten voor Sprint 4 (US-18) | Hamilton | 15 april 2025 | Prototype backend aangemaakt, commit [3cf00f8] | Hamilton, team |
+| Navbar font aanpassen naar "Roboto" (US-3) | Hamilton | 13 april 2025 | Commit [5fb4769] uitgevoerd, font-family aangepast | Hamilton, Tom |
 | Login-button toevoegen aan EasyAnalyse-pagina | Hamilton | 14 april 2025 | **Nog niet afgerond, staat op de planning voor Sprint 4.** Login functionaliteit werkt al via [http://localhost:3000/login](http://localhost:3000/login) | Hamilton, Tom |
 
 ## Bewijs van naleving afspraken
 
-- **Backendstructuur:** Zie commit [abc1234] en backend prototype in de repository.
-- **Navbar font:** Zie pull request #24 en screenshot van de aangepaste navbar.
+- **Backendstructuur:** Zie commit [3cf00f8 – Merge pull request #23 from HamiltonPDev/feature/us-18-mongodb-cms](https://github.com/HamiltonPDev/easyFWD/commit/3cf00f8) en backend prototype in de repository. Pull request: #23 – feature/us-18-mongodb-cms (gemerged, verified).
+- **Navbar font:** Zie commit [5fb4769 – Update global styles, add shopping cart icon, and implement navigation menu with animations](https://github.com/HamiltonPDev/easyFWD/commit/5fb4769).
 - **Login-button:** Nog niet afgerond. De login functionaliteit werkt al via [http://localhost:3000/login](http://localhost:3000/login), maar de knop op EasyAnalyse moet nog worden toegevoegd.
 
----
-
-*Deze afspraken zijn besproken en vastgelegd tijdens de standup van zaterdag 12 april 2025. Zie het verslag in [meeting.md](../criterium-6.1-en-6.2-de-meeting/meeting.md) en de video voor bewijs van overleg en afstemming.* 
+![Login](./login.png)
