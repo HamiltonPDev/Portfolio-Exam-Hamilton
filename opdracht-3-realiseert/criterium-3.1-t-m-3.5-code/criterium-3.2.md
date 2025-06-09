@@ -9,7 +9,7 @@ Hieronder leg ik per gerealiseerde user story uit hoe de opgeleverde functionali
 - Opgezet met Mongoose: een User-model met velden voor email, passwordHash en rol.
 - Connectie met MongoDB docker development environment, veilige opslag van gebruikersdata.
 - Validatie van e-mail en wachtwoord bij registratie en login.
-- [Codevoorbeeld](#) / ![screenshot](../../bronnen/Screenshots/US-21.png)
+- [Codevoorbeeld](https://github.com/HamiltonPDev/easyFWD/blob/main/src/models/User.ts) ![screenshot](../screenshots/mongoDB-Conection.png)
 
 **Aansluiting:** De user story is volledig gerealiseerd: gebruikers kunnen veilig worden aangemaakt, beheerd en geauthenticeerd volgens de eisen. Het model ondersteunt rolbeheer en veilige opslag.
 
@@ -22,7 +22,7 @@ Hieronder leg ik per gerealiseerde user story uit hoe de opgeleverde functionali
 - NextAuth.js geïmplementeerd met een custom credentials provider.
 - Authenticatie via e-mail en wachtwoord, validatie tegen het MongoDB User-model.
 - JWT-sessies opgeslagen in HttpOnly cookies voor extra veiligheid.
-- [Codevoorbeeld](#) / ![screenshot](../../bronnen/Screenshots/US-22.png)
+- [Codevoorbeeld](https://github.com/HamiltonPDev/easyFWD/blob/main/src/lib/auth.ts) ![screenshot](../screenshots/NextAuth.png)
 
 **Aansluiting:** De login werkt zoals bedoeld: alleen bestaande gebruikers met correct wachtwoord krijgen toegang. JWT en HttpOnly cookies zorgen voor veilige sessies, conform de eisen.
 
@@ -35,7 +35,7 @@ Hieronder leg ik per gerealiseerde user story uit hoe de opgeleverde functionali
 - Middleware toegevoegd aan Next.js project om admin-routes te beveiligen.
 - Controle op JWT en gebruikersrol bij elke request.
 - Automatische redirect naar login bij ongeautoriseerde toegang.
-- [Codevoorbeeld](#) / ![screenshot](../../bronnen/Screenshots/US-23.png)
+- [Codevoorbeeld](https://github.com/HamiltonPDev/easyFWD/blob/main/src/middleware/auth.ts) ![screenshot](../screenshots/Middleware.png)
 
 **Aansluiting:** Alleen ingelogde gebruikers met de juiste rol kunnen admin-pagina's bezoeken. De beveiliging voldoet aan de eisen en voorkomt ongeautoriseerde toegang.
 
