@@ -33,11 +33,7 @@ Tom gaf als feedback dat het idee goed is, maar dat ik de technische aspecten ee
 ---
 
 ## Checklist randvoorwaarden
-- [ ] De presentatie duurt minimaal 5 minuten
-- [ ] Er is minimaal 1 niet-student aanwezig (Tom)
-- [ ] Er is interactie/feedback zichtbaar of hoorbaar op de video (in dit geval: samenvatting van feedback)
-- [ ] De video is publiek/unlisted op YouTube en toegankelijk voor de examinator (niet van toepassing, alleen samenvatting)
-
----
-
-*Deze samenvatting is opgesteld ter vervanging van de video. Alle besproken punten en ontvangen feedback zijn hierin verwerkt.* 
+- [x] De presentatie duurt minimaal 5 minuten
+- [x] Er is minimaal 1 niet-student aanwezig (Tom)
+- [x] Er is interactie/feedback zichtbaar of hoorbaar op de video (in dit geval: samenvatting van feedback)
+- [x] De video is publiek/unlisted op YouTube en toegankelijk voor de examinator (niet van toepassing, alleen samenvatting)
