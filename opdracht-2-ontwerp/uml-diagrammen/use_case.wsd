@@ -2,7 +2,9 @@
 left to right direction
 skinparam packageStyle rectangle
 
-actor Beheerder
+' Frontend actors
+actor Bezoeker
+actor Bedrijfsklant
 
 package "EasyFWD Use Cases" {
   usecase UC_ViewProductInfo     as "Productinformatie\nbekijken"
@@ -14,27 +16,44 @@ package "EasyFWD Use Cases" {
   usecase UC_LoginCMS            as "Inloggen op CMS"
   usecase UC_ManageContent       as "Content beheren"
   usecase UC_UploadImages        as "Afbeeldingen uploaden"
-  usecase UC_EditPages           as "Pagina’s visueel bewerken"
+  usecase UC_EditPages           as "Pagina's visueel bewerken"
+  usecase UC_UserMgmt            as "Gebruikersbeheer"
+  usecase UC_CreateDeletePage    as "Pagina aanmaken/\nverwijderen"
+  usecase UC_Auth                as "Authenticatie"
+  usecase UC_SendEmail           as "E-mail versturen"
+  usecase UC_TRPC                as "tRPC API calls"
 }
 
-actor Bezoeker  #right
-actor Bedrijfsklant  #right
+actor Beheerder as Beheerder
 
-' Relaties beheerder
-Beheerder      -- UC_LoginCMS
-UC_LoginCMS    --> UC_ManageContent
-UC_ManageContent --> UC_UploadImages
-UC_ManageContent --> UC_EditPages
-
-' Relaties bezoeker
+' Frontend actors
 Bezoeker       -- UC_ViewProductInfo
 Bezoeker       -- UC_Contact
 Bezoeker       -- UC_ReadReviews
 Bezoeker       -- UC_ConsultFAQ
 Bezoeker       -- UC_ComparePrices
 
-' Relaties bedrijfsklant
 Bedrijfsklant  -- UC_RequestDemo
-UC_RequestDemo .> UC_Contact : <<include>>
-UC_RequestDemo .> UC_RequestDemo : <<extend>>\n(optie: bedrijfsnaam)
+
+' Use case relationships
+UC_RequestDemo .> UC_Contact : <<include>>\n(optie: bedrijfsnaam)
+UC_Contact .> UC_SendEmail : <<include>>
+UC_RequestDemo .> UC_SendEmail : <<include>>
+
+' CMS/Backend actors (Beheerder aan de rechterkant)
+UC_LoginCMS -- Beheerder
+UC_ManageContent -- Beheerder
+UC_UserMgmt -- Beheerder
+UC_LoginCMS .> UC_Auth : <<include>>
+UC_ManageContent .> UC_TRPC : <<include>>
+UC_ManageContent .> UC_CreateDeletePage : <<include>>
+UC_ManageContent .> UC_EditPages : <<include>>
+UC_ManageContent .> UC_UploadImages : <<include>>
+UC_UserMgmt .> UC_Auth : <<include>>
+
+' Extensions (optional/conditional flows)
+UC_ManageContent .> UC_UploadImages : <<extend>>\n(afbeeldingen toevoegen)
+UC_ManageContent .> UC_EditPages : <<extend>>\n(visuele editor)
+UC_ManageContent .> UC_CreateDeletePage : <<extend>>\n(pagina beheer)
+
 @enduml

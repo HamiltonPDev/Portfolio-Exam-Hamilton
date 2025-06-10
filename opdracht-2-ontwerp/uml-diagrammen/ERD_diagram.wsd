@@ -7,7 +7,20 @@ entity "users" as Users {
   name            : String
   email           : String <<UQ>>
   passwordHash    : String
-  role            : String  {admin, editor, viewer}
+  roleId          : ObjectId <<FK>>
+}
+
+entity "profiles" as Profiles {
+  * _id           : ObjectId <<PK>>
+  --
+  bio             : String
+  avatarUrl       : String <<NULL>>
+}
+
+entity "roles" as Roles {
+  * _id           : ObjectId <<PK>>
+  --
+  name            : String
 }
 
 entity "pages" as Pages {
@@ -30,8 +43,36 @@ entity "sections" as Sections {
   imageUrl        : String <<NULL>>
 }
 
+entity "media" as Media {
+  * _id           : ObjectId <<PK>>
+  --
+  url             : String
+  type            : String  {image, video}
+  uploadedBy      : ObjectId <<FK>>
+}
 
+entity "tags" as Tags {
+  * _id           : ObjectId <<PK>>
+  --
+  name            : String
+}
+
+entity "page_tags" as PageTags {
+  * _id           : ObjectId <<PK>>
+  --
+  pageId          : ObjectId <<FK>>
+  tagId           : ObjectId <<FK>>
+  page_tag        : (pageId, tagId) <<UQ>>
+}
+
+
+' Relaties
 Users ||--o{ Pages     : "owns"
 Pages ||--o{ Sections  : "contains"
+Users ||--o{ Media     : "uploads"
+Roles }|--o{ Users     : "assigned"
+Users ||--|| Profiles  : "has"         ' 1-op-1
+Pages ||--o{ PageTags  : ""
+Tags  ||--o{ PageTags  : ""            ' n-op-n via PageTags
 
 @enduml
