@@ -21,10 +21,9 @@ alt valid user?
     CredProv --> NextAuth: valid user? (true)
     NextAuth -> Session: create JWT in cookie
     Session --> Admin: Set-Cookie: next-auth.session-token
-else invalid user?
+else invalid user
     CredProv --> NextAuth: valid user? (false)
-    NextAuth -> Session: create JWT in cookie
-    Session --> Admin: Set-Cookie: next-auth.session-token
+    NextAuth -> Admin: 401 Unauthorized
 end
 
 == Session creation ==
