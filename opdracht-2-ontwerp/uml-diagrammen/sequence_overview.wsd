@@ -17,18 +17,15 @@ NextAuth -> CredProv: authorize({ email, password })
 CredProv -> DB: findOne({ email })
 DB --> CredProv: user record (with passwordHash)
 
+== Session creation ==
 alt valid user?
     CredProv --> NextAuth: valid user? (true)
     NextAuth -> Session: create JWT in cookie
     Session --> Admin: Set-Cookie: next-auth.session-token
-else invalid user
+else invalid user?
     CredProv --> NextAuth: valid user? (false)
     NextAuth -> Admin: 401 Unauthorized
 end
-
-== Session creation ==
-NextAuth -> Session: create JWT in cookie
-Session --> Admin: Set-Cookie: next-auth.session-token
 
 == Accessing protected /admin ==
 Admin -> Middleware: GET /admin
