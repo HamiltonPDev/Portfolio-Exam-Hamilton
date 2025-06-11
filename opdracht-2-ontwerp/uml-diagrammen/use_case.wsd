@@ -2,58 +2,63 @@
 left to right direction
 skinparam packageStyle rectangle
 
-' Frontend actors
+' Actoren links
 actor Bezoeker
 actor Bedrijfsklant
 
-package "EasyFWD Use Cases" {
-  usecase UC_ViewProductInfo     as "Productinformatie\nbekijken"
-  usecase UC_RequestDemo         as "Demo aanvragen"
-  usecase UC_Contact             as "Contact opnemen"
-  usecase UC_ReadReviews         as "Reviews lezen"
-  usecase UC_ConsultFAQ          as "FAQ raadplegen"
-  usecase UC_ComparePrices       as "Prijzen vergelijken"
-  usecase UC_LoginCMS            as "Inloggen op CMS"
-  usecase UC_ManageContent       as "Content beheren"
-  usecase UC_UploadImages        as "Afbeeldingen uploaden"
-  usecase UC_EditPages           as "Pagina's visueel bewerken"
-  usecase UC_UserMgmt            as "Gebruikersbeheer"
-  usecase UC_CreateDeletePage    as "Pagina aanmaken/\nverwijderen"
-  usecase UC_Auth                as "Authenticatie"
-  usecase UC_SendEmail           as "E-mail versturen"
-  usecase UC_TRPC                as "tRPC API calls"
+' Systeem met use cases
+rectangle "EasyFWD Use Cases" {
+  (Productinformatie bekijken) as UC_ViewProductInfo
+  (Demo aanvragen) as UC_RequestDemo
+  (Contact opnemen) as UC_Contact
+  (Reviews lezen) as UC_ReadReviews
+  (FAQ raadplegen) as UC_ConsultFAQ
+  (Prijzen vergelijken) as UC_ComparePrices
+  (Inloggen op CMS) as UC_LoginCMS
+  (Content beheren) as UC_ManageContent
+  (Gebruikersbeheer) as UC_UserMgmt
+  (Pagina aanmaken/verwijderen) as UC_CreateDeletePage
+  (Pagina's visueel bewerken) as UC_EditPages
+  (Afbeeldingen uploaden) as UC_UploadImages
+  (Authenticatie) as UC_Auth
+  (E-mail versturen) as UC_SendEmail
+  (tRPC API calls) as UC_TRPC
 }
 
-actor Beheerder as Beheerder
+' Actor rechts
+actor Beheerder
 
-' Frontend actors
-Bezoeker       -- UC_ViewProductInfo
-Bezoeker       -- UC_Contact
-Bezoeker       -- UC_ReadReviews
-Bezoeker       -- UC_ConsultFAQ
-Bezoeker       -- UC_ComparePrices
+' Relaties links
+Bezoeker -- UC_ViewProductInfo
+Bezoeker -- UC_Contact
+Bezoeker -- UC_ReadReviews
+Bezoeker -- UC_ConsultFAQ
+Bezoeker -- UC_ComparePrices
+Bedrijfsklant -- UC_RequestDemo
 
-Bedrijfsklant  -- UC_RequestDemo
-
-' Use case relationships
-UC_RequestDemo .> UC_Contact : <<include>>\n(optie: bedrijfsnaam)
-UC_Contact .> UC_SendEmail : <<include>>
-UC_RequestDemo .> UC_SendEmail : <<include>>
-
-' CMS/Backend actors (Beheerder aan de rechterkant)
+' Relaties rechts (beheerder)
 UC_LoginCMS -- Beheerder
 UC_ManageContent -- Beheerder
-UC_UserMgmt -- Beheerder
-UC_LoginCMS .> UC_Auth : <<include>>
-UC_ManageContent .> UC_TRPC : <<include>>
-UC_ManageContent .> UC_CreateDeletePage : <<include>>
-UC_ManageContent .> UC_EditPages : <<include>>
-UC_ManageContent .> UC_UploadImages : <<include>>
-UC_UserMgmt .> UC_Auth : <<include>>
+' UC_UserMgmt -- Beheerder
+' UC_UploadImages -- Beheerder
+' UC_EditPages -- Beheerder
+' UC_CreateDeletePage -- Beheerder
 
-' Extensions (optional/conditional flows)
-UC_ManageContent .> UC_UploadImages : <<extend>>\n(afbeeldingen toevoegen)
-UC_ManageContent .> UC_EditPages : <<extend>>\n(visuele editor)
-UC_ManageContent .> UC_CreateDeletePage : <<extend>>\n(pagina beheer)
+
+' Relaties tussen beheer-use cases
+UC_LoginCMS ..> UC_Auth : <<include>>
+' UC_ManageContent ..> UC_TRPC : <<include>>
+' UC_ManageContent ..> UC_CreateDeletePage : <<include>>
+' UC_ManageContent ..> UC_EditPages : <<include>>
+' UC_ManageContent ..> UC_UploadImages : <<include>>
+' UC_UserMgmt ..> UC_Auth : <<include>>
+
+' ' Relaties tussen use cases
+' UC_RequestDemo .> UC_Contact : <<include>>\n(optie: bedrijfsnaam)
+' UC_Contact .> UC_SendEmail : <<include>>
+' UC_RequestDemo .> UC_SendEmail : <<include>>
+' UC_ManageContent .> UC_UploadImages : <<extend>>\n(afbeeldingen toevoegen)
+' UC_ManageContent .> UC_EditPages : <<extend>>\n(visuele editor)
+' UC_ManageContent .> UC_CreateDeletePage : <<extend>>\n(pagina beheer)
 
 @enduml

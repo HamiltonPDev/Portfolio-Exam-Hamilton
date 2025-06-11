@@ -105,7 +105,7 @@ export default withAuth(
 );
 export const config = { matcher: ['/admin/:path*'] };
 ```
->*Deze middleware zorgt ervoor dat alleen gebruikers met de juiste rol toegang krijgen tot admin-routes. Dit is efficiënt, want je hoeft niet in elke route apart te controleren op rechten.*
+>*Deze middleware zorgt ervoor dat alleen gebruikers met de juiste rol toegang krijgen tot admin-routes. Dit is efficiënt, want hoeft niet in elke route apart te controleren op rechten.*
 
 ## Security & Validatie
 - Wachtwoorden worden gehasht met bcrypt in het User model, zodat ze nooit als platte tekst in de database staan.
@@ -197,7 +197,7 @@ userSchema.methods.comparePassword = async function (
   return bcrypt.compare(candidatePassword, this.passwordHash);
 };
 
-// Abstractie: je gebruikt comparePassword zonder te weten hoe bcrypt werkt
+// Abstractie: gebruikt comparePassword zonder te weten hoe bcrypt werkt
 
 // Overerving: IUser extends Document (Mongoose)
 
@@ -237,7 +237,7 @@ getBySlug: t.procedure
 **Samengevat:**
 - In de back-end zijn data en logica netjes gescheiden in modellen en API-routes.
 - In de front-end zijn componenten herbruikbaar, goed gestructureerd en maken ze gebruik van props en state (OOP in React).
-- Je project volgt dus zowel OOP- als MVC-principes, wat zorgt voor onderhoudbaarheid, uitbreidbaarheid en duidelijke structuur.
+- Het project volgt zowel OOP- als MVC-principes, wat zorgt voor onderhoudbaarheid, uitbreidbaarheid en duidelijke structuur.
 
 ## Conclusie
 Het usersysteem is opgezet volgens best practices: de code is modulair, veilig, goed leesbaar en efficiënt. Validatie, foutafhandeling en security zijn op meerdere plekken in de code geborgd. De MVC-structuur en OOP-principes zijn zowel in de back-end als front-end duidelijk terug te zien. Hiermee voldoet het systeem aan de eisen van codekwaliteit.

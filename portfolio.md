@@ -37,17 +37,10 @@ In dit portfolio beschrijf ik mijn bijdrage aan dit project per examenopdracht.
   - [wireframes.pdf](./opdracht-2-ontwerp/wireframes.pdf)
 - **Reflectie**: Door eerst wireframes te maken konden we snel afstemmen met het team. De modulaire opzet bleek later handig bij uitbreidingen.
 
----
 
-## Opdracht 3 t/m 8
-
-*(Vul hier je overige opdrachten in zoals: realiseert software, test software, werkt samen, enz.)*  
-Gebruik telkens dezelfde structuur: situatie – rol – bewijs – reflectie.
-
----
 
 ## Slotreflectie
 
 Tijdens het EasyFWD-project heb ik mijn rol als software developer kunnen uitbreiden naar projectmedewerker, planner en ontwerper.  
-Ik heb veel geleerd over samenwerken in een team, het belang van structuur in je codebase en het plannen van iteraties. 
+Ik heb veel geleerd over samenwerken in een team, het belang van structuur in de codebase en het plannen van iteraties. 
 In een volgend project zou ik meer aandacht besteden aan automatische tests en continue feedbackloops.
