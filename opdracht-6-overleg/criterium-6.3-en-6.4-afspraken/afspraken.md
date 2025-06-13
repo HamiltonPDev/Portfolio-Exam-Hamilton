@@ -20,3 +20,5 @@
 - **Login-button:** Nog niet afgerond. De login functionaliteit werkt al via [http://localhost:3000/login](http://localhost:3000/login), maar de knop op EasyAnalyse moet nog worden toegevoegd.
 
 ![Login](./login.png)
+
+- bewijs dat je je aan de afspraken hebt gehouden:
